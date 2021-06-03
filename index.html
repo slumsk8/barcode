@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarCode</title>    
+</head>
+<body>
+    <html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/JsBarcode.all.min.js"></script>
+        <script>
+            function GerarCódigoDeBarras(elementoInput){                
+                if(!elementoInput.value){
+                    elementoInput.value = 0;
+                }
+                JsBarcode('#codBarras', elementoInput.value);
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <label>Digite um valor</label>
+            <input type="text" onblur="GerarCódigoDeBarras(this)"/>
+        </div>
+        <svg id="codBarras"></svg>
+    </body>    
+</html>
+</body>
+</html>
